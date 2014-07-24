@@ -1,7 +1,7 @@
 #!/usr/bin/python -tt
 
-# tic-tac-toe in Python
-# for Flatiron School
+# tic-tac-toe in the Terminal
+# written in Python
 # by Sun Kim
 
 
@@ -13,14 +13,14 @@ def ask_input(plyr):
   while (True):
     try:
       inpt = int(raw_input("Your turn, " + plyr + ": \n"))
-      # ask for proper input if given input is not between 0 and 10, or already used 
+      # ask for proper input if given input is not between 0 and 10, or already used
       if inpt < 1 or inpt > 9 or check_board(inpt) == False:
         print "Please give proper integer input (1-9)."
       else:
         break
     # see that user input is a proper integer type
-    except ValueError: 
-      print "Please give proper integer input (1-9)." 
+    except ValueError:
+      print "Please give proper integer input (1-9)."
   return inpt
 
 # check to see user input has not already been given
@@ -34,7 +34,7 @@ def check_board(num):
 
 # return the corresponding board position, given user input.
 # this can probably be somehow written into one function with set_board() function below...
-# ... but I'm not quite sure what would be the best way. 
+# ... but I'm not quite sure what would be the best way.
 def search_for_position(num):
   # determine row position for given input
   if num < 4:
@@ -89,7 +89,7 @@ def is_winner(board):
 def main():
   # declare a global variable called board, so that all functions have access
   global BOARD
-  # initialize 3X3 board using list comprehension, which will act like a nested for-loop 
+  # initialize 3X3 board using list comprehension, which will act like a nested for-loop
   BOARD = [["_" for i in range(3)] for j in range(3)]
 
   # instantiate count that will be used later to see if board is full
@@ -114,8 +114,8 @@ def main():
 
   # set initial player turn to player 1
   turn = p1
-  
-  # ask for player input until board is full 
+
+  # ask for player input until board is full
   while (count < 9):
     # player 1's turn
     if turn == p1:
